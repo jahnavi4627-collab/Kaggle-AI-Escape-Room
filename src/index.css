@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=VT323&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "JetBrains Mono", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-retro: "VT323", monospace;
+}
+
+/* CRT styling utilities */
+@keyframes crt-flicker {
+  0% { opacity: 0.985; }
+  50% { opacity: 1; }
+  100% { opacity: 0.99; }
+}
+
+@keyframes pulse-fast {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.crt-screen {
+  animation: crt-flicker 0.15s infinite;
+  background: radial-gradient(circle, #0e1610 0%, #050806 100%);
+  position: relative;
+}
+
+.crt-scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 10;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+.glow-text-emerald {
+  text-shadow: 0 0 4px rgba(52, 211, 153, 0.5), 0 0 12px rgba(52, 211, 153, 0.3);
+}
+
+.glow-text-amber {
+  text-shadow: 0 0 4px rgba(245, 158, 11, 0.5), 0 0 12px rgba(245, 158, 11, 0.3);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 4px rgba(34, 211, 238, 0.5), 0 0 12px rgba(34, 211, 238, 0.3);
+}
+
+.cursor-blink {
+  animation: pulse-fast 1s infinite;
+}
+
+/* Scrollbar retro styling */
+.retro-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.retro-scroll::-webkit-scrollbar-track {
+  background: rgba(16, 185, 129, 0.05);
+}
+.retro-scroll::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 3px;
+}
+.retro-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.6);
+}
+

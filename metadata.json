@@ -1,0 +1,6 @@
+{
+  "name": "Escape Room Simulator",
+  "description": "An immersive, text-based Escape Room Simulator game powered by Gemini, featuring retro terminal visuals and dynamic puzzle tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
